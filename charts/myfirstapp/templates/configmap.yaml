@@ -24,26 +24,27 @@ data:
   index.html: |
     <html>
     <head>
-      <title>MyFirstApp</title>
+      <title>{{ .Values.ui.title }}</title>
       <style>
         body {
-          background-color: #f0f8ff; /* light blue background */
+          background-color: {{ .Values.ui.backgroundColor }};
           font-family: Arial, sans-serif;
           text-align: center;
           padding-top: 50px;
         }
         h1 {
-          color: #2e8b57; /* sea green */
+          color: {{ .Values.ui.headerColor }};
           font-size: 2.5em;
         }
         h2 {
-          color: #4682b4; /* steel blue */
+          color: {{ .Values.ui.subheaderColor }};
           margin-top: 20px;
         }
       </style>
     </head>
     <body>
-      <h1>Hello from myfirstapp via ConfigMap!</h1>
-      <h2>🚀 Deployed with Argo CD & Helm</h2>
+      <h1>{{ .Values.ui.header }}</h1>
+      <h2>{{ .Values.ui.subheader }}</h2>
     </body>
     </html>
+
