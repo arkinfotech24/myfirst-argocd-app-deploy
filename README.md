@@ -81,9 +81,9 @@ Code
 
 ---
 
-## 📊 Architecture Diagram
+## Architecture Diagram
 
-```mermaid
+```
 flowchart LR
     A[Developer commits code] --> B[GitHub Repo]
     B --> C[Argo CD Application Manifest<br>(myfirstapp-helm.yaml or myfirstapp-kustomize.yaml)]
