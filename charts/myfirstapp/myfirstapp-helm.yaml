@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myfirstapp-helm
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/arkinfotech24/myfirst-argocd-app-deploy.git
+    targetRevision: HEAD
+    path: charts/myfirstapp
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myfirstapp
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
